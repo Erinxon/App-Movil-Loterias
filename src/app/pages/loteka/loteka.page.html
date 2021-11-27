@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Loteka</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="loteka">
+    <app-sorteo [sorteos]="loteka.sorteos"></app-sorteo>
+  </div>
+  <app-loanding *ngIf="!loteka"></app-loanding>
+</ion-content>

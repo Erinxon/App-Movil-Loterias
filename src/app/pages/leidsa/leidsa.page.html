@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Leidsa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="leidsa">
+    <app-sorteo [sorteos]="leidsa.sorteos"></app-sorteo>
+  </div>
+  <app-loanding *ngIf="!leidsa"></app-loanding>
+</ion-content>

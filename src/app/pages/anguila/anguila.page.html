@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Anguila</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="anguila">
+    <app-sorteo [sorteos]="anguila.sorteos"></app-sorteo>
+  </div>
+  <app-loanding *ngIf="!anguila"></app-loanding>
+</ion-content>

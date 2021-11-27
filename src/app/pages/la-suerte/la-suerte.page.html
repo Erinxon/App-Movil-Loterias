@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>La Suerte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="laSuerte">
+    <app-sorteo [sorteos]="laSuerte.sorteos"></app-sorteo>
+  </div>
+  <app-loanding *ngIf="!laSuerte"></app-loanding>
+</ion-content>

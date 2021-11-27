@@ -1,0 +1,7 @@
+{
+  "name": "Loterias",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

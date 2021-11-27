@@ -1,0 +1,28 @@
+<ion-card *ngFor="let sorteo of sorteos">
+  <ion-card-header>
+    <ion-list>
+      <ion-item>
+        <ion-label>{{sorteo.nombre}}</ion-label>
+        <ion-label slot="end" class="fecha"
+        [ngStyle]="{'background-color': isHoy(sorteo.fecha) ? '#616161' : '#d7d7d7',
+         'color': isHoy(sorteo.fecha) ? '#fff' : '#333'}"
+        >{{sorteo.fecha}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-list>
+        <ion-item>
+         <ion-img class="imagen" [src]="sorteo.imagen" slot="start"></ion-img>
+         <ion-infinite-scroll>
+          <span *ngFor="let numero of sorteo.numeros"
+         [ngClass]="{'numeros': isNumber(numero), 'letra': !isNumber(numero)}"
+         [ngStyle]="{'background-color': isHoy(sorteo.fecha) ? '#52b231' : '#d7d7d7',
+         'color': isHoy(sorteo.fecha) ? '#fff' : '#333 !important'}">{{numero}}</span>
+         </ion-infinite-scroll>
+        </ion-item>
+      </ion-list>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
