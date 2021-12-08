@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Sorteo } from 'src/app/models/sorteo.model';
 
@@ -13,8 +14,8 @@ export class SorteoComponent implements OnInit {
   ngOnInit() {}
 
   isHoy(fecha: string){
-    const hoy = new Date().toLocaleDateString();
-    return fecha.replace('-','/').replace('-','/') === hoy;
+    const fechaActual = formatDate(new Date(), 'dd-MM-yyyy', 'en');
+    return fechaActual === fecha;
   }
 
   isNumber(numero: string){
